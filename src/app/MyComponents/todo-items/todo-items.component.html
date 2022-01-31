@@ -1,0 +1,14 @@
+<div class="mt-3">
+    <h5 [ngClass]="{'strike': !this.todo.active}"> {{todo.title}}</h5>
+    <p [ngClass]="{'strike': !this.todo.active}">{{todo.desc}}</p>
+    <div class="mt-3">
+        <!--         <label class="input-group-text" for="inputGroupFile02">
+            <input class="form-check-input mt-0 " type="checkbox" id="checkbox" value="checkbox" aria-label="Checkbox for following text input" >
+        </label> -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="todo{{i}}" (click)="onCheckboxClick(todo)" [checked]="!todo.active" />
+            <label class="form-check-label" for="todo{{i}}">Strike</label>
+        </div>
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="onClick(todo)">Delete</button>
+</div>
